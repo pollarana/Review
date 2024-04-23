@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id();
+            $table->id('ID_Reviews');
+            $table->integer('ID_Events');
+            $table->integer('ID_Users');
+            $table->longText('Comment');
             $table->timestamps();
         });
     }
