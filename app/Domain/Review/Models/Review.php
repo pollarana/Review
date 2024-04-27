@@ -1,5 +1,5 @@
 <?php
-namespace App\Domain\Review\Models;
+namespace App\Domain\News\Models;
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
 /**
@@ -14,41 +14,6 @@ use Illuminate\Database\Eloquent\Model;
 */
 class Review extends Model
 {
-    protected $table = 'reviews';
+protected $table = 'reviews';
 }
 
-class User extends Model 
-//get review associated with the user
-{
-    public function review()
-    {
-        return $this->hasOne(Review::class);
-    }
-}
-
-class Review extends Model 
-//get user having review
-{
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-}
-
-class User extends Model 
-//get event associated with user
-{
-    public function event()
-    {
-        return $this->hasOne(Event::class);
-    }
-}
-
-class Event extends Model 
-//get user registered for event
-{
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-}
